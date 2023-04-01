@@ -9,7 +9,7 @@ function App() {
     const [receivedServerName, setreceivedServerName] = React.useState("");
 
     function OnHandle(event) {
-        axios.get("http://192.168.1.35:3000/api")
+        axios.get("http://localhost:3000/api")
             .then(res => {
                 const persons = res.data;
                 setData(persons.message);
@@ -24,7 +24,7 @@ function App() {
         event.preventDefault();
 
         const user = { name: name };
-        axios.post("http://192.168.1.35:3000/post", user)
+        axios.post("http://localhost:3000/post", user)
             .then(res => {
                 console.log(res);
                 console.log(res.data.message);
